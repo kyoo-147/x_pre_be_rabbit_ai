@@ -1,0 +1,70 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #20232a;
+    color: #61dafb;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+}
+
+h1 {
+    color: #61dafb;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.camera-section,
+.file-section,
+.result-section {
+    background-color: #282c34;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #61dafb;
+}
+
+button {
+    background-color: #61dafb;
+    color: #282c34;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a4f4;
+}
+
+#videoElement {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#fileInput {
+    margin-top: 10px;
+}
+
+#uploadedImage {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#resultText,
+#countText {
+    margin-top: 10px;
+}

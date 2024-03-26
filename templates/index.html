@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet Buttons</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px;
+            background-color: black; /* Đặt nền đen */
+            color: white; /* Màu chữ trắng */
+        }
+
+        .alphabet-button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #61dafb;
+            color: #20232a;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #camera-view {
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+            display: none; /* Ẩn camera view khi chưa bật */
+        }
+    </style>
+</head>
+<body>
+    {% for letter in alphabet %}
+        <button class="alphabet-button" onclick="alphabetButtonClicked('{{ letter }}')">{{ letter }}</button>
+    {% endfor %}
+
+    <video id="camera-view" autoplay playsinline></video>
+
+    <script>
+        function alphabetButtonClicked(letter) {
+            // Xử lý khi một nút chữ cái được nhấp
+            console.log('Clicked on letter:', letter);
+            // Thêm logic xử lý ở đây (ví dụ: gửi yêu cầu đến server)
+        }
+
+        async function startCamera() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                const videoElement = document.getElementById('camera-view');
+                videoElement.srcObject = stream;
+                videoElement.style.display = 'block'; // Hiển thị camera view
+            } catch (error) {
+                console.error('Error accessing camera:', error);
+            }
+        }
+    </script>
+</body>
+</html>
